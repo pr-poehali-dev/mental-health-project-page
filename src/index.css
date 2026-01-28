@@ -15,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 262 83% 58%;
+    --primary: 220 13% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 291 84% 61%;
+    --secondary: 220 13% 35%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 199 89% 48%;
+    --accent: 220 13% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -109,26 +109,5 @@
   h5,
   h6 {
     font-family: "Montserrat", sans-serif;
-  }
-}
-
-@layer utilities {
-  .gradient-purple-pink {
-    background: linear-gradient(135deg, #9b87f5 0%, #d946ef 100%);
-  }
-
-  .gradient-purple-blue {
-    background: linear-gradient(135deg, #9b87f5 0%, #0ea5e9 100%);
-  }
-
-  .gradient-pink-blue {
-    background: linear-gradient(135deg, #d946ef 0%, #0ea5e9 100%);
-  }
-
-  .text-gradient {
-    background: linear-gradient(135deg, #9b87f5 0%, #d946ef 50%, #0ea5e9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
 }
