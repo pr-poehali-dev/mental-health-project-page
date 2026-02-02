@@ -303,7 +303,7 @@ const Index = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Телефон</div>
-                    <div className="text-gray-600">8 (800) 555-35-35</div>
+                    <div className="text-gray-600">+7 (495) 640-16-37</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -313,7 +313,7 @@ const Index = () => {
                   <div>
                     <div className="font-semibold text-gray-900">Адрес</div>
                     <div className="text-gray-600">
-                      г. Москва, ул. Примерная, д. 1
+                      129090, г. Москва, ул. Большая Спасская, д. 12, оф. 7, разметка 66
                     </div>
                   </div>
                 </div>
@@ -324,35 +324,99 @@ const Index = () => {
               <h3 className="text-2xl font-bold mb-6 text-gray-900">
                 Подписаться на новости
               </h3>
-              <form onSubmit={handleSubscribe} className="space-y-4">
-                <div>
-                  <Input
-                    type="email"
-                    placeholder="Ваш email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="h-12 text-lg border-2 border-gray-300 focus:border-gray-500"
-                    required
-                  />
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Icon name="Mail" size={20} className="text-primary" />
+                    <span className="font-semibold text-gray-900">Образование:</span>
+                  </div>
+                  <div className="flex flex-wrap gap-3 ml-8">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => window.open('https://vk.com/rosmededucation', '_blank')}
+                      className="border-2"
+                    >
+                      <Icon name="MessageCircle" size={16} className="mr-2" />
+                      VK
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => window.open('https://t.me/rosmededucation', '_blank')}
+                      className="border-2"
+                    >
+                      <Icon name="Send" size={16} className="mr-2" />
+                      Telegram
+                    </Button>
+                  </div>
                 </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-white text-lg"
-                >
-                  Подписаться
-                  <Icon name="Send" size={20} className="ml-2" />
-                </Button>
-                <p className="text-sm text-gray-500 text-center">
-                  Мы не передаём ваши данные третьим лицам
+
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Icon name="Heart" size={20} className="text-primary" />
+                    <span className="font-semibold text-gray-900">СОПЗ:</span>
+                  </div>
+                  <div className="flex flex-wrap gap-3 ml-8">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => window.open('https://vk.com/ssopz', '_blank')}
+                      className="border-2"
+                    >
+                      <Icon name="MessageCircle" size={16} className="mr-2" />
+                      VK
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => window.open('https://t.me/sopzofficial', '_blank')}
+                      className="border-2"
+                    >
+                      <Icon name="Send" size={16} className="mr-2" />
+                      Telegram
+                    </Button>
+                  </div>
+                </div>
+
+                <p className="text-sm text-gray-500 text-center pt-4">
+                  Подпишитесь на наши каналы и будьте в курсе всех новостей
                 </p>
-              </form>
+              </div>
             </Card>
           </div>
         </div>
       </section>
 
-
+      <footer className="py-8 px-6 bg-white border-t border-gray-200">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex flex-col items-center gap-4 text-sm text-gray-600">
+            <div className="flex flex-wrap justify-center gap-6">
+              <a
+                href="https://mental-health-russia.ru/politika-obrabotki-personalnyh-dannyh/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-gray-900 transition-colors"
+              >
+                <Icon name="CheckCircle" size={16} className="text-green-600" />
+                Политика обработки персональных данных
+              </a>
+              <a
+                href="https://mental-health-russia.ru/soglasie-na-obrabotku-personalnyh-dannyh/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-gray-900 transition-colors"
+              >
+                <Icon name="CheckCircle" size={16} className="text-green-600" />
+                Согласие на обработку персональных данных
+              </a>
+            </div>
+            <p className="text-center">
+              © 2026 Союз охраны психического здоровья. Все права защищены.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
