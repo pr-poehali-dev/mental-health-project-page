@@ -16,6 +16,7 @@ const categories = [
         title: 'Конференции',
         description: 'Международная научно-образовательная программа по формированию профессиональных компетенций по вопросам охраны психического здоровья',
         url: 'https://conf.mental-health-russia.ru/about-2025',
+        badge: 'Бесплатно',
       },
       {
         id: 2,
@@ -28,12 +29,14 @@ const categories = [
         title: 'Школа волонтеров',
         description: 'Объединяем волонтеров для решения ключевых задач охраны психического здоровья: профилактики, реабилитации и преодоления стигматизации',
         url: 'https://volunteers.mental-health-russia.ru/',
+        badge: 'Курсы • Бесплатно',
       },
       {
         id: 4,
         title: 'Социальный импакт',
         description: 'От идеи до импакта: образовательный курс и международный конкурс для проектов в сфере психического здоровья',
         url: 'https://rosmededucation.ru/social_impact',
+        badge: 'Курс • Бесплатно',
       },
       {
         id: 5,
@@ -235,10 +238,15 @@ const Index = () => {
                   onClick={() => window.open(project.url, '_blank')}
                 >
                   <CardContent className="p-6">
-                    <div className="mb-4">
+                    <div className="mb-4 flex items-start justify-between">
                       <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
                         <Icon name="Folder" size={24} className="text-gray-600" />
                       </div>
+                      {project.badge && (
+                        <span className="text-xs font-semibold px-2 py-1 rounded-full bg-green-100 text-green-700">
+                          {project.badge}
+                        </span>
+                      )}
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors">
                       {project.title}
