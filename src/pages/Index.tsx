@@ -40,6 +40,12 @@ const categories = [
       },
       {
         id: 5,
+        title: 'Библиотека СОПЗ',
+        description: 'Электронная библиотека научных материалов, публикаций и методических пособий по вопросам психического здоровья',
+        url: 'https://mental-health-russia.ru/biblioteka/#tab=438&page=1&sort=DESC',
+      },
+      {
+        id: 6,
         title: 'Российская психотерапевтическая ассоциация',
         description: 'Объединение специалистов для развития профессиональных стандартов и повышения доступности качественной психотерапевтической помощи',
         url: 'https://rpa-russia.ru/departments/moskva',
@@ -52,19 +58,19 @@ const categories = [
     icon: 'Shield',
     projects: [
       {
-        id: 6,
+        id: 7,
         title: 'Я/МЫ психиатр',
         description: 'Цикл видео-интервью, где через откровенные разговоры с легендами профессии передаётся уникальный опыт начинающим специалистам',
         url: 'https://mental-health-russia.ru/ya-my-psihiatr/',
       },
       {
-        id: 7,
+        id: 8,
         title: 'Психология — новая религия?',
         description: 'Спектр-подкаст о роли психологии в современном мире: как она помогает понять себя и справляться с трудностями',
         url: 'https://mental-health-russia.ru/proekty/',
       },
       {
-        id: 8,
+        id: 9,
         title: 'вМесте',
         description: 'Видео-подкаст о взаимодействии, поддержке и важности совместной работы в сфере психического здоровья',
         url: 'https://mental-health-russia.ru/proekty/',
@@ -77,19 +83,25 @@ const categories = [
     icon: 'Heart',
     projects: [
       {
-        id: 9,
+        id: 10,
+        title: 'Навигатор помощи',
+        description: 'Каталог организаций и специалистов, оказывающих помощь в сфере психического здоровья по всей России',
+        url: 'https://mental-health-russia.ru/elkatalog/',
+      },
+      {
+        id: 11,
         title: 'Фестиваль реабилитационных программ «Другие?»',
         description: 'Межрегиональная площадка по развитию системы реабилитационной помощи и социальной интеграции людей с психическими особенностями',
         url: 'https://festival.mental-health-russia.ru/',
       },
       {
-        id: 10,
+        id: 12,
         title: 'Интернет-магазин «Другие?»',
         description: 'Онлайн-магазин уникальных товаров ручной работы, созданных людьми с ментальными особенностями',
         url: 'https://drugie.org/',
       },
       {
-        id: 11,
+        id: 13,
         title: 'Малая полиграфия',
         description: 'Производство и печать качественной полиграфической продукции для поддержки реабилитационных программ',
         url: 'https://mental-health-russia.ru/proekty/',
@@ -165,11 +177,14 @@ const Index = () => {
       <section id="hero" className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
               Союз охраны психического здоровья
             </h1>
+            <p className="text-lg md:text-xl text-gray-600 mb-2 max-w-3xl mx-auto">
+              <strong className="text-gray-900">Психическое здоровье — ценность и приоритет.</strong>
+            </p>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Психическое здоровье — ценность и приоритет. Медиатор между специалистами и организациями. Мы работаем в трёх направлениях: образование и наука, реабилитация, профилактика — чтобы психическое здоровье становилось понятной общественной ценностью и частью системных решений.
+              Медиатор между специалистами и организациями. Мы работаем в трёх направлениях: образование и наука, реабилитация, профилактика — чтобы психическое здоровье становилось понятной общественной ценностью и частью системных решений.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button
