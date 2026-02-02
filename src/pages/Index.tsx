@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const categories = [
   {
@@ -113,6 +114,7 @@ const categories = [
 const Index = () => {
   const [email, setEmail] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('education');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { toast } = useToast();
 
   const handleSubscribe = (e: React.FormEvent) => {
@@ -134,13 +136,13 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
-        <nav className="container mx-auto px-6 py-4">
+        <nav className="container mx-auto px-4 md:px-6 py-3 md:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <img 
                 src="https://cdn.poehali.dev/projects/6a3bb585-a665-439d-ada4-2143ecb50ce5/bucket/cf905e09-b068-4f84-928b-65c53031fab6.png" 
                 alt="Логотип СОПЗ" 
-                className="h-16 w-auto"
+                className="h-10 md:h-16 w-auto"
               />
             </div>
             <div className="hidden md:flex gap-8">
@@ -163,32 +165,81 @@ const Index = () => {
                 Контакты
               </button>
             </div>
-            <Button 
-              className="bg-primary hover:bg-primary/90 text-white"
-              onClick={() => window.open('https://t.me/katrinmalceva', '_blank')}
-            >
-              Связаться
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-white hidden md:flex"
+                onClick={() => window.open('https://t.me/katrinmalceva', '_blank')}
+              >
+                Связаться
+              </Button>
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden">
+                    <Icon name="Menu" size={24} />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px]">
+                  <div className="flex flex-col gap-6 mt-8">
+                    <button
+                      onClick={() => {
+                        scrollToSection('hero');
+                        setMobileMenuOpen(false);
+                      }}
+                      className="text-lg text-gray-600 hover:text-gray-900 transition-colors font-medium text-left"
+                    >
+                      Главная
+                    </button>
+                    <button
+                      onClick={() => {
+                        scrollToSection('projects');
+                        setMobileMenuOpen(false);
+                      }}
+                      className="text-lg text-gray-600 hover:text-gray-900 transition-colors font-medium text-left"
+                    >
+                      Проекты
+                    </button>
+                    <button
+                      onClick={() => {
+                        scrollToSection('contacts');
+                        setMobileMenuOpen(false);
+                      }}
+                      className="text-lg text-gray-600 hover:text-gray-900 transition-colors font-medium text-left"
+                    >
+                      Контакты
+                    </button>
+                    <Button 
+                      className="bg-primary hover:bg-primary/90 text-white w-full"
+                      onClick={() => {
+                        window.open('https://t.me/katrinmalceva', '_blank');
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      Связаться
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </nav>
       </header>
 
-      <section id="hero" className="pt-32 pb-20 px-6">
+      <section id="hero" className="pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-gray-900 leading-tight">
               Союз охраны психического здоровья
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-2 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 mb-2 max-w-3xl mx-auto">
               <strong className="text-gray-900">Психическое здоровье — ценность и приоритет.</strong>
             </p>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto">
               Медиатор между специалистами и организациями. Мы работаем в трёх направлениях: образование и наука, реабилитация, профилактика — чтобы психическое здоровье становилось понятной общественной ценностью и частью системных решений.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white text-lg px-8"
+                className="bg-primary hover:bg-primary/90 text-white text-base md:text-lg px-6 md:px-8"
                 onClick={() => scrollToSection('projects')}
               >
                 Наши проекты
@@ -198,24 +249,24 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="projects" className="py-20 px-6 bg-white">
+      <section id="projects" className="py-12 md:py-20 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+          <div className="text-center mb-8 md:mb-16 animate-slide-up">
+            <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-gray-900">
               Наши проекты
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-base md:text-xl text-gray-600 mb-6 md:mb-8">
               Выберите направление, чтобы увидеть проекты
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-col md:flex-row flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-12">
               {categories.map((category) => (
                 <Button
                   key={category.id}
                   size="lg"
                   variant={selectedCategory === category.id ? 'default' : 'outline'}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`text-lg px-6 ${
+                  className={`text-sm md:text-lg px-4 md:px-6 ${
                     selectedCategory === category.id
                       ? 'bg-primary text-white'
                       : 'border-2 border-gray-300 hover:bg-gray-100'
@@ -228,7 +279,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {categories
               .find((cat) => cat.id === selectedCategory)
               ?.projects.map((project, index) => (
@@ -270,20 +321,20 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-6 bg-gray-50">
+      <section id="contacts" className="py-12 md:py-20 px-4 md:px-6 bg-gray-50">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+          <div className="text-center mb-8 md:mb-12 animate-fade-in">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-gray-900">
               Контакты и подписка
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-base md:text-xl text-gray-600">
               Будьте в курсе всех наших проектов и новостей
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-8 border border-gray-200">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
+            <Card className="p-4 md:p-8 border border-gray-200">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-900">
                 Свяжитесь с нами
               </h3>
               <div className="space-y-4">
@@ -319,8 +370,8 @@ const Index = () => {
               </div>
             </Card>
 
-            <Card className="p-8 border border-gray-200">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">
+            <Card className="p-4 md:p-8 border border-gray-200">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-900">
                 Подписаться на новости
               </h3>
               <div className="space-y-6">
@@ -387,27 +438,27 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-8 px-6 bg-white border-t border-gray-200">
+      <footer className="py-6 md:py-8 px-4 md:px-6 bg-white border-t border-gray-200">
         <div className="container mx-auto max-w-4xl">
-          <div className="flex flex-col items-center gap-4 text-sm text-gray-600">
-            <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-col items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
+            <div className="flex flex-col md:flex-row flex-wrap justify-center gap-3 md:gap-6">
               <a
                 href="https://mental-health-russia.ru/politika-obrabotki-personalnyh-dannyh/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-gray-900 transition-colors"
+                className="flex items-center gap-2 hover:text-gray-900 transition-colors justify-center"
               >
-                <Icon name="CheckCircle" size={16} className="text-green-600" />
-                Политика обработки персональных данных
+                <Icon name="CheckCircle" size={16} className="text-green-600 flex-shrink-0" />
+                <span className="text-center md:text-left">Политика обработки персональных данных</span>
               </a>
               <a
                 href="https://mental-health-russia.ru/soglasie-na-obrabotku-personalnyh-dannyh/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-gray-900 transition-colors"
+                className="flex items-center gap-2 hover:text-gray-900 transition-colors justify-center"
               >
-                <Icon name="CheckCircle" size={16} className="text-green-600" />
-                Согласие на обработку персональных данных
+                <Icon name="CheckCircle" size={16} className="text-green-600 flex-shrink-0" />
+                <span className="text-center md:text-left">Согласие на обработку персональных данных</span>
               </a>
             </div>
             <p className="text-center">
