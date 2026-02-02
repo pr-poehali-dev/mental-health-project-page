@@ -256,68 +256,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-6 bg-gray-50">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
-              О союзе
-            </h2>
-          </div>
-
-          <Card className="p-8 md:p-12 border border-gray-200 shadow-md">
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-              <p>
-                <strong className="text-gray-900">
-                  Союз охраны психического здоровья
-                </strong>{' '}
-                — это некоммерческая организация, посвященная улучшению
-                психического благополучия людей в России.
-              </p>
-              <p>
-                Мы верим, что психическое здоровье так же важно, как и
-                физическое, и каждый человек заслуживает доступа к качественной
-                психологической помощи и поддержке.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6 my-8">
-                <div className="text-center p-6 rounded-xl bg-gray-50 border border-gray-200">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center">
-                    <Icon name="Users" size={32} className="text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    50K+
-                  </div>
-                  <div className="text-gray-600">Помогли людям</div>
-                </div>
-                <div className="text-center p-6 rounded-xl bg-gray-50 border border-gray-200">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center">
-                    <Icon name="Award" size={32} className="text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    12+
-                  </div>
-                  <div className="text-gray-600">Проектов</div>
-                </div>
-                <div className="text-center p-6 rounded-xl bg-gray-50 border border-gray-200">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent flex items-center justify-center">
-                    <Icon name="Clock" size={32} className="text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    24/7
-                  </div>
-                  <div className="text-gray-600">Поддержка</div>
-                </div>
-              </div>
-              <p>
-                Наша команда состоит из опытных психологов, социальных
-                работников и волонтеров, которые разделяют нашу миссию и готовы
-                помогать тем, кто в этом нуждается.
-              </p>
-            </div>
-          </Card>
-        </div>
-      </section>
-
-      <section id="contacts" className="py-20 px-6 bg-white">
+      <section id="contacts" className="py-20 px-6 bg-gray-50">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
