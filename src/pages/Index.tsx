@@ -139,10 +139,9 @@ const Index = () => {
             <div className="flex items-center gap-3">
               <img 
                 src="https://cdn.poehali.dev/projects/6a3bb585-a665-439d-ada4-2143ecb50ce5/bucket/cf905e09-b068-4f84-928b-65c53031fab6.png" 
-                alt="Логотип СОЮЗ" 
-                className="h-12 w-auto"
+                alt="Логотип СОПЗ" 
+                className="h-16 w-auto"
               />
-              <span className="text-xl font-bold text-gray-800">СОЮЗ</span>
             </div>
             <div className="hidden md:flex gap-8">
               <button
