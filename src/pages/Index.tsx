@@ -124,10 +124,12 @@ const Index = () => {
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <Icon name="Heart" size={20} className="text-white" />
-              </div>
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://cdn.poehali.dev/projects/6a3bb585-a665-439d-ada4-2143ecb50ce5/bucket/cf905e09-b068-4f84-928b-65c53031fab6.png" 
+                alt="Логотип СОЮЗ" 
+                className="h-12 w-auto"
+              />
               <span className="text-xl font-bold text-gray-800">СОЮЗ</span>
             </div>
             <div className="hidden md:flex gap-8">
@@ -156,7 +158,10 @@ const Index = () => {
                 Контакты
               </button>
             </div>
-            <Button className="bg-primary hover:bg-primary/90 text-white">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-white"
+              onClick={() => window.open('https://t.me/katrinmalceva', '_blank')}
+            >
               Связаться
             </Button>
           </div>
