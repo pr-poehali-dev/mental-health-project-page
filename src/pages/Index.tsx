@@ -5,71 +5,87 @@ import { Input } from '@/components/ui/input';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
 
-const projects = [
+const categories = [
   {
-    id: 1,
-    title: 'Психическое здоровье: современные тенденции и перспективы',
-    description: 'Международная научно-образовательная программа по формированию профессиональных компетенций по вопросам охраны психического здоровья',
-    url: 'https://conf.mental-health-russia.ru/about-2025',
+    id: 'education',
+    name: 'Образование и наука',
+    icon: 'GraduationCap',
+    projects: [
+      {
+        id: 1,
+        title: 'Конференции',
+        description: 'Международная научно-образовательная программа по формированию профессиональных компетенций по вопросам охраны психического здоровья',
+        url: 'https://conf.mental-health-russia.ru/about-2025',
+      },
+      {
+        id: 2,
+        title: 'Научно-образовательный центр',
+        description: 'Программы повышения квалификации и переподготовки для специалистов сферы здоровья и помощи с индивидуальным графиком обучения',
+        url: 'https://rosmededucation.ru/',
+      },
+      {
+        id: 3,
+        title: 'Российская психотерапевтическая ассоциация',
+        description: 'Объединение специалистов для развития профессиональных стандартов и повышения доступности качественной психотерапевтической помощи',
+        url: 'https://rpa-russia.ru/departments/moskva',
+      },
+    ],
   },
   {
-    id: 2,
-    title: 'Научно-образовательный центр современных медицинских технологий',
-    description: 'Программы повышения квалификации и переподготовки для специалистов сферы здоровья и помощи с индивидуальным графиком обучения',
-    url: 'https://rosmededucation.ru/',
+    id: 'prevention',
+    name: 'Профилактика',
+    icon: 'Shield',
+    projects: [
+      {
+        id: 4,
+        title: 'Я/МЫ психиатр',
+        description: 'Цикл видео-интервью, где через откровенные разговоры с легендами профессии передаётся уникальный опыт начинающим специалистам',
+        url: 'https://mental-health-russia.ru/ya-my-psihiatr/',
+      },
+      {
+        id: 5,
+        title: 'Психология — новая религия?',
+        description: 'Спектр-подкаст о роли психологии в современном мире: как она помогает понять себя и справляться с трудностями',
+        url: 'https://mental-health-russia.ru/proekty/',
+      },
+      {
+        id: 6,
+        title: 'вМесте',
+        description: 'Видео-подкаст о взаимодействии, поддержке и важности совместной работы в сфере психического здоровья',
+        url: 'https://mental-health-russia.ru/proekty/',
+      },
+    ],
   },
   {
-    id: 3,
-    title: 'Фестиваль реабилитационных программ «Другие?»',
-    description: 'Межрегиональная площадка по развитию системы реабилитационной помощи и социальной интеграции людей с психическими особенностями',
-    url: 'https://festival.mental-health-russia.ru/',
-  },
-  {
-    id: 4,
-    title: 'Интернет-магазин «Другие?»',
-    description: 'Онлайн-магазин уникальных товаров ручной работы, созданных людьми с ментальными особенностями',
-    url: 'https://drugie.org/',
-  },
-  {
-    id: 5,
-    title: 'Волонтерство в психиатрии',
-    description: 'Объединяем волонтеров для решения ключевых задач охраны психического здоровья: профилактики, реабилитации и преодоления стигматизации',
-    url: 'https://volunteers.mental-health-russia.ru/',
-  },
-  {
-    id: 6,
-    title: 'Социальное проектирование',
-    description: 'От идеи до импакта: образовательный курс и международный конкурс для проектов в сфере психического здоровья',
-    url: 'https://rosmededucation.ru/social_impact',
-  },
-  {
-    id: 7,
-    title: 'Я/МЫ психиатр',
-    description: 'Цикл видео-интервью, где через откровенные разговоры с легендами профессии передаётся уникальный опыт начинающим специалистам',
-    url: 'https://mental-health-russia.ru/ya-my-psihiatr/',
-  },
-  {
-    id: 8,
-    title: 'Российская психотерапевтическая ассоциация',
-    description: 'Объединение специалистов для развития профессиональных стандартов и повышения доступности качественной психотерапевтической помощи',
-    url: 'https://rpa-russia.ru/departments/moskva',
-  },
-  {
-    id: 9,
-    title: 'Психология — новая религия?',
-    description: 'Спектр-подкаст о роли психологии в современном мире: как она помогает понять себя и справляться с трудностями',
-    url: 'https://mental-health-russia.ru/proekty/',
-  },
-  {
-    id: 10,
-    title: 'вМесте',
-    description: 'Видео-подкаст о взаимодействии, поддержке и важности совместной работы в сфере психического здоровья',
-    url: 'https://mental-health-russia.ru/proekty/',
+    id: 'rehabilitation',
+    name: 'Реабилитация',
+    icon: 'Heart',
+    projects: [
+      {
+        id: 7,
+        title: 'Фестиваль реабилитационных программ «Другие?»',
+        description: 'Межрегиональная площадка по развитию системы реабилитационной помощи и социальной интеграции людей с психическими особенностями',
+        url: 'https://festival.mental-health-russia.ru/',
+      },
+      {
+        id: 8,
+        title: 'Интернет-магазин «Другие?»',
+        description: 'Онлайн-магазин уникальных товаров ручной работы, созданных людьми с ментальными особенностями',
+        url: 'https://drugie.org/',
+      },
+      {
+        id: 9,
+        title: 'Малая полиграфия',
+        description: 'Производство и печать качественной полиграфической продукции для поддержки реабилитационных программ',
+        url: 'https://mental-health-russia.ru/proekty/',
+      },
+    ],
   },
 ];
 
 const Index = () => {
   const [email, setEmail] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('education');
   const { toast } = useToast();
 
   const handleSubscribe = (e: React.FormEvent) => {
@@ -172,44 +188,63 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               Наши проекты
             </h2>
-            <p className="text-xl text-gray-600">
-              Выберите проект, чтобы узнать подробности
+            <p className="text-xl text-gray-600 mb-8">
+              Выберите направление, чтобы увидеть проекты
             </p>
+
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {categories.map((category) => (
+                <Button
+                  key={category.id}
+                  size="lg"
+                  variant={selectedCategory === category.id ? 'default' : 'outline'}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`text-lg px-6 ${
+                    selectedCategory === category.id
+                      ? 'bg-primary text-white'
+                      : 'border-2 border-gray-300 hover:bg-gray-100'
+                  }`}
+                >
+                  <Icon name={category.icon} size={20} className="mr-2" />
+                  {category.name}
+                </Button>
+              ))}
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <Card
-                key={project.id}
-                className="group cursor-pointer overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-scale-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-                onClick={() => window.open(project.url, '_blank')}
-              >
-                <CardContent className="p-6">
-                  <div className="mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+            {categories
+              .find((cat) => cat.id === selectedCategory)
+              ?.projects.map((project, index) => (
+                <Card
+                  key={project.id}
+                  className="group cursor-pointer overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-scale-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                  onClick={() => window.open(project.url, '_blank')}
+                >
+                  <CardContent className="p-6">
+                    <div className="mb-4">
+                      <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                        <Icon name="Folder" size={24} className="text-gray-600" />
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 min-h-[3rem]">
+                      {project.description}
+                    </p>
+                    <div className="flex items-center text-primary font-medium">
+                      Подробнее
                       <Icon
-                        name="Folder"
-                        size={24}
-                        className="text-gray-600"
+                        name="ArrowRight"
+                        size={18}
+                        className="ml-2 group-hover:translate-x-2 transition-transform"
                       />
                     </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 min-h-[3rem]">{project.description}</p>
-                  <div className="flex items-center text-primary font-medium">
-                    Подробнее
-                    <Icon
-                      name="ArrowRight"
-                      size={18}
-                      className="ml-2 group-hover:translate-x-2 transition-transform"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
           </div>
         </div>
       </section>
