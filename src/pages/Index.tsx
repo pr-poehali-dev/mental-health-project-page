@@ -146,12 +146,6 @@ const Index = () => {
                 Проекты
               </button>
               <button
-                onClick={() => scrollToSection('about')}
-                className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
-              >
-                О союзе
-              </button>
-              <button
                 onClick={() => scrollToSection('contacts')}
                 className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
@@ -171,14 +165,11 @@ const Index = () => {
       <section id="hero" className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 leading-tight">
-              Союз охраны
-              <br />
-              психического здоровья
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+              Союз охраны психического здоровья
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Мы помогаем людям получить качественную психологическую поддержку
-              и заботимся о ментальном благополучии общества
+            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              Психическое здоровье — ценность и приоритет. Медиатор между специалистами и организациями. Мы работаем в трёх направлениях: образование и наука, реабилитация, профилактика — чтобы психическое здоровье становилось понятной общественной ценностью и частью системных решений.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button
@@ -187,15 +178,6 @@ const Index = () => {
                 onClick={() => scrollToSection('projects')}
               >
                 Наши проекты
-                <Icon name="ArrowRight" size={20} className="ml-2" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 border-2 border-gray-300 hover:bg-gray-100"
-                onClick={() => scrollToSection('about')}
-              >
-                Узнать больше
               </Button>
             </div>
           </div>
