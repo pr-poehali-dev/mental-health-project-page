@@ -291,6 +291,14 @@ const Index = () => {
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                     Психология - новая религия
                   </h3>
+                  <Button
+                    variant="outline"
+                    className="w-full mt-3"
+                    onClick={() => window.open('https://rutube.ru/video/f494198f19299f9298e051e1e4d47a6b/?r=a', '_blank')}
+                  >
+                    <Icon name="ExternalLink" size={16} className="mr-2" />
+                    Смотреть на Rutube
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -310,6 +318,14 @@ const Index = () => {
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                     Проект вМесте
                   </h3>
+                  <Button
+                    variant="outline"
+                    className="w-full mt-3"
+                    onClick={() => window.open('https://rutube.ru/video/598ea3a7b5bf136010a58986de800238/?r=a/', '_blank')}
+                  >
+                    <Icon name="ExternalLink" size={16} className="mr-2" />
+                    Смотреть на Rutube
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -329,6 +345,14 @@ const Index = () => {
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                     Школа волонтеров
                   </h3>
+                  <Button
+                    variant="outline"
+                    className="w-full mt-3"
+                    onClick={() => window.open('https://rutube.ru/video/4deff6a4ac4340090cf2921963f62350/?r=a', '_blank')}
+                  >
+                    <Icon name="ExternalLink" size={16} className="mr-2" />
+                    Смотреть на Rutube
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -348,6 +372,14 @@ const Index = () => {
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                     Я, мы психиатр
                   </h3>
+                  <Button
+                    variant="outline"
+                    className="w-full mt-3"
+                    onClick={() => window.open('https://rutube.ru/video/8203f0e32e7503fafb8911c20fcca0c5/?r=a', '_blank')}
+                  >
+                    <Icon name="ExternalLink" size={16} className="mr-2" />
+                    Смотреть на Rutube
+                  </Button>
                 </div>
               </CardContent>
             </Card>
