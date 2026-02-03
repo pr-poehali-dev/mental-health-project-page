@@ -153,6 +153,12 @@ const Index = () => {
                 Главная
               </button>
               <button
+                onClick={() => scrollToSection('videos')}
+                className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+              >
+                Видео
+              </button>
+              <button
                 onClick={() => scrollToSection('projects')}
                 className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
@@ -188,6 +194,15 @@ const Index = () => {
                       className="text-lg text-gray-600 hover:text-gray-900 transition-colors font-medium text-left"
                     >
                       Главная
+                    </button>
+                    <button
+                      onClick={() => {
+                        scrollToSection('videos');
+                        setMobileMenuOpen(false);
+                      }}
+                      className="text-lg text-gray-600 hover:text-gray-900 transition-colors font-medium text-left"
+                    >
+                      Видео
                     </button>
                     <button
                       onClick={() => {
@@ -249,7 +264,98 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="projects" className="py-12 md:py-20 px-4 md:px-6 bg-white">
+      <section id="videos" className="py-12 md:py-20 px-4 md:px-6 bg-white border-t border-gray-200">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8 md:mb-12 animate-fade-in">
+            <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-gray-900">
+              Видео о наших проектах
+            </h2>
+            <p className="text-base md:text-xl text-gray-600">
+              Узнайте больше о том, чем мы занимаемся
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <Card className="overflow-hidden border border-gray-200 hover:shadow-lg transition-all">
+              <CardContent className="p-0">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://rutube.ru/play/embed/f494198f19299f9298e051e1e4d47a6b"
+                    frameBorder="0"
+                    allow="clipboard-write; autoplay"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                    Психология - новая религия
+                  </h3>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden border border-gray-200 hover:shadow-lg transition-all">
+              <CardContent className="p-0">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://rutube.ru/play/embed/598ea3a7b5bf136010a58986de800238"
+                    frameBorder="0"
+                    allow="clipboard-write; autoplay"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                    Проект вМесте
+                  </h3>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden border border-gray-200 hover:shadow-lg transition-all">
+              <CardContent className="p-0">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://rutube.ru/play/embed/4deff6a4ac4340090cf2921963f62350"
+                    frameBorder="0"
+                    allow="clipboard-write; autoplay"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                    Школа волонтеров
+                  </h3>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden border border-gray-200 hover:shadow-lg transition-all">
+              <CardContent className="p-0">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://rutube.ru/play/embed/8203f0e32e7503fafb8911c20fcca0c5"
+                    frameBorder="0"
+                    allow="clipboard-write; autoplay"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                    Я, мы психиатр
+                  </h3>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="py-12 md:py-20 px-4 md:px-6 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 md:mb-16 animate-slide-up">
             <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-gray-900">
